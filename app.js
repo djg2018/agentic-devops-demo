@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
         </style>
       </head>
       <body>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/GitHub_Logo.png/768px-GitHub_Logo.png" alt="Agentic AI">
+        <img src="<img src="https://i.imgur.com/NkVrRyk.png" alt="Agentic AI Logo">
         <h1>Agentic AI for DevOps</h1>
         <p>
           Welcome to the future of intelligent automation. This live demo showcases how Agentic AI can analyze, decide, and act — enabling self-healing DevOps pipelines powered by GitHub Actions, Node.js, and cloud-native design.
