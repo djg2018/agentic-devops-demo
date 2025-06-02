@@ -3,7 +3,7 @@ const app = express();
 app.get('/', (req, res) => {
   
   // Intentional runtime failure error
-  throw new Error("Intentional failure for triage test");
+  res.send(`
   res.send(`
     <html>
       <head>
