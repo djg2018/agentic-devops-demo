@@ -1,3 +1,4 @@
+throw new Error("Intentional failure to trigger Agentic AI triage");
 
 const express = require('express');
 const app = express();
