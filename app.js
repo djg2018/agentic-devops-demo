@@ -1,9 +1,9 @@
+throw new Error("Intentional startup failure for triage test");
+
 const express = require('express');
 const app = express();
+
 app.get('/', (req, res) => {
-  
-  // Intentional runtime failure error
-  res.send(`
   res.send(`
     <html>
       <head>
