@@ -35,6 +35,9 @@ jobs:
           if grep -q "Error:" app.log; then
             cat app.log
             echo "🚨 Application failed to start. Failing pipeline."
+            # Optional: Run Agentic AI system
+            echo "🤖 Running Agentic AI system if enabled..."
+            python3 AgenticAI/agentic_ai_runner.py || true
             exit 1
           else
             echo "✅ App started successfully."
