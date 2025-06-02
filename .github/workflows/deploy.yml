@@ -23,9 +23,7 @@ jobs:
           cd ~/AgenticDevOpsDemo
           git pull origin main
           npm install
-          echo "Starting app..."
-          node app.js   
-
-
-          #          pkill node || true
-          #          nohup node app.js > out.log 2>&1 &
+#         echo "Starting app..."
+#         node app.js   
+          pkill node || true
+          nohup node app.js > out.log 2>&1 &
