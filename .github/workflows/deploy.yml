@@ -1,4 +1,4 @@
-name: Deploy Node App to GCE VM
+name: Deploy Node.js App to GCP VM
 
 on:
   push:
@@ -10,22 +10,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repo
+    - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Connect and Deploy to GCE VM
+    - name: Deploy to GCP VM via SSH
       uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{ secrets.GCE_VM_HOST }}
         username: ${{ secrets.GCE_VM_USER }}
-        key: ${{ secrets.GCE_VM_SSH_KEY }}
+        key: ${{ secrets.GCE_SSH_KEY }}
         script: |
           cd ~/AgenticDevOpsDemo
           git pull origin main
           npm install
           pkill node || true
-          node app.js > app.log 2>&1
-          EXIT_CODE=$?
-          cat app.log
-          exit $EXIT_CODE
+          
+          # Start app in background
+          nohup node app.js > app.log 2>&1 &
 
+          # Wait briefly to let app start
+          sleep 3
+
+          # Check log for errors
+          if grep -q "Error:" app.log; then
+            cat app.log
+            echo "🚨 Application failed to start. Failing pipeline."
+            exit 1
+          else
+            echo "✅ App started successfully."
+          fi
