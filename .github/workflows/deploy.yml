@@ -35,6 +35,10 @@ jobs:
           if grep -q "Error:" app.log; then
             cat app.log
             echo "🚨 Application failed to start. Failing pipeline."
+            # ✅ Enable Agentic AI here
+            export PYTHONPATH=$PYTHONPATH:$(pwd)
+            export AGENTIC_AI_ENABLED=true
+            export AUTO_FIX_ENABLED=true   # optional          
             # Optional: Run Agentic AI system
             echo "🤖 Running Agentic AI system if enabled..."
             export PYTHONPATH=$PYTHONPATH:$(pwd)
