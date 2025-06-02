@@ -24,4 +24,4 @@ jobs:
           git pull origin main
           npm install
           pkill node || true
-          nohup node app.js > out.log 2>&1 &
+          node app.js > out.log 2>&1
