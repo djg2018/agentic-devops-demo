@@ -1,3 +1,4 @@
+throw new Error("Intentional startup failure for triage test");
 
 const express = require('express');
 const app = express();
