@@ -11,32 +11,26 @@ app.get('/', (req, res) => {
         <style>
           body {
             background-color: #0f172a;
-            color: #f8fafc;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            padding: 60px;
-          }
-          img {
-            width: 300px;
-            margin: 20px auto;
-          }
-          h1 {
-            font-size: 2.5em;
             color: #38bdf8;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
           }
-          p {
-            font-size: 1.2em;
-            max-width: 600px;
-            margin: 20px auto;
+          .message {
+            font-size: 2rem;
+            max-width: 700px;
+            line-height: 1.5;
           }
         </style>
       </head>
       <body>
-        <img src="<img src="https://i.imgur.com/NkVrRyk.png" alt="Agentic AI Logo">
-        <h1>Agentic AI for DevOps</h1>
-        <p>
-          Welcome to the future of intelligent automation. This live demo showcases how Agentic AI can analyze, decide, and act — enabling self-healing DevOps pipelines powered by GitHub Actions, Node.js, and cloud-native design.
-        </p>
+        <div class="message">
+          ⚙️ Welcome to the <strong>Agentic DevOps</strong> Demo Platform<br>
+          🤖 Powered by <strong>AI Agents</strong> for Smart Triage and Auto-Remediation
+        </div>
       </body>
     </html>
   `);
@@ -46,3 +40,4 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
