@@ -1,3 +1,4 @@
+throw new Error ("Intentional failure to demo Agentic AI")
 
 const express = require('express');
 const app = express();
